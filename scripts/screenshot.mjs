@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 // Captures gameplay screenshots by driving the kart with synthetic input.
 // Usage: node scripts/screenshot.mjs [url]
+// Uses the Playwright-managed Chromium build (npx playwright install
+// chromium) — no system Chrome needed.
 // Requires the dev server running (npm run dev).
 
 import { chromium } from 'playwright-core'
@@ -13,7 +15,6 @@ const OUT_DIR = path.resolve(import.meta.dirname, '..', 'docs', 'screenshots')
 async function main() {
   fs.mkdirSync(OUT_DIR, { recursive: true })
   const browser = await chromium.launch({
-    channel: 'chrome',
     headless: true,
     args: ['--enable-unsafe-swiftshader'],
   })
