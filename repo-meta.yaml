@@ -1,0 +1,16 @@
+# repo-meta.yaml — orientation source of truth for this repo.
+# Contract: dark-factory docs/features/fleet-orientation-docs.md
+#   - Six REQUIRED fields: name, purpose, layer, status, owner, links.
+#   - Parsed with grep/sed (no yq dependency) — keep it to simple scalars,
+#     a block list under `links:`, and quoted strings.
+
+name: jonathanleahy/kart-circuit
+purpose: Browser kart racer — Three.js + TypeScript with a deterministic fixed-timestep arcade physics core, drift-boost, and a solo time-trial on a closed circuit.
+layer: product
+status: active
+owner: "jonathanleahy"
+links:
+  - title: Live repo
+    url: https://github.com/jonathanleahy/kart-circuit
+
+test_cmd: "npm test"
